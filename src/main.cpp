@@ -3,7 +3,6 @@
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include "webpage.h"
-#include <pgmspace.h>
 
 const char ssid0[32] = "I really hate Rishi Sunak";
 const char ssid1[32] = "I really hate Liz Truss";
