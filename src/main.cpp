@@ -31,6 +31,18 @@ ESP8266WebServer webServer(80);
 unsigned long bootTime = 0, lastActivity = 0, lastTick = 0, array_pos = 0, previous_arraypos = 1;
 unsigned long time_now = 0;
 int period = 60000;
+
+void LEDFLUTTER()
+{
+  for (int i = 0; i < 5; i++)
+  {
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(250);
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(250);
+  }
+}
+
 void setup()
 {
   Serial.begin(9600);
@@ -48,9 +60,8 @@ void setup()
 void loop()
 {
   time_now = millis();
-
   Serial.println(ssid_array[array_pos]);
-  WiFi.softAP(ssid_array[0]);
+  WiFi.softAP(ssid_array[array_pos]);
 
   if (array_pos == 13)
   {
@@ -66,4 +77,6 @@ void loop()
     dnsServer.processNextRequest();
     webServer.handleClient();
   }
+  LEDFLUTTER();
+  Serial.println("Changing SSID");
 }
