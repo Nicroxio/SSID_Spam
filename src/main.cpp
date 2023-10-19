@@ -20,6 +20,7 @@ const char ssid11[32] = "TRANSRIGHTS!!!!";
 const char ssid12[32] = "TheGovOnlySupportsItsAgenda";
 
 const char *ssid_array[16] = {ssid0, ssid1, ssid2, ssid3, ssid4, ssid5, ssid6, ssid7, ssid8, ssid9, ssid10, ssid11, ssid12};
+const int SSID_NUMBER = 13; // Change to number of total SSID's
 
 const byte HTTP_CODE = 200;
 const byte DNS_PORT = 53;
@@ -30,7 +31,7 @@ ESP8266WebServer webServer(80);
 
 unsigned long bootTime = 0, lastActivity = 0, lastTick = 0, array_pos = 0, previous_arraypos = 1;
 unsigned long time_now = 0;
-int period = 60000;
+int period = 120000;
 
 void LEDFLUTTER()
 {
@@ -63,7 +64,7 @@ void loop()
   Serial.println(ssid_array[array_pos]);
   WiFi.softAP(ssid_array[array_pos]);
 
-  if (array_pos == 13)
+  if (array_pos == SSID_NUMBER)
   {
     array_pos = 0;
   }
