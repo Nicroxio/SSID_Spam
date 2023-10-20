@@ -11,6 +11,8 @@ This tool also creates a captive portal of HTML which can be changed in the **We
 
 ## How to Use
 
+Almost all configuration is done in config.h
+
 ### Add SSID's
 
 To add a new SSID add the following:
@@ -20,7 +22,7 @@ const char ssid0[32] = "Example";
 ```
 
 Make sure that the SSID is lower or equal to 32 characters.
-If you add another SSID than the 13 current ones edit the `SSID_NUMBER` constant.
+If you add another SSID than the 13 current ones edit the `SSID_NUMBER` constant. (in main.cpp)
 
 ### Change Captive Portal
 
