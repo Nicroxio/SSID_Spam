@@ -2,7 +2,7 @@
 
 ## About
 
-Its a simple tool to spit out changing SSID's in the code given its got 13 propaganda like examples.
+Its a simple tool to spit out changing SSID's in the code given its got 13 dumb examples.
 This tool also creates a captive portal of HTML which can be changed in the **Webpage.h** headerfile.
 
 | Example
