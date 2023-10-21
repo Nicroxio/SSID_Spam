@@ -12,7 +12,6 @@ const char ssid10[32] = "Get Off My LAN!";
 const char ssid11[32] = "The Internet Is Lava";
 const char ssid12[32] = "I'm Under Your Bed";
 
-
 const int SSID_NUMBER = 13; // Change to number of total SSID's
 
 int period = 120000; // Number of ms per SSID change

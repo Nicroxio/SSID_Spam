@@ -28,3 +28,7 @@ If you add another SSID than the 13 current ones edit the `SSID_NUMBER` constant
 
 To change the webpage you need to edit the **webpage.h** header.
 Make each new line of HTML its own quote from there just put HTML. Keep the webpage small because the ESP-12E's flash is 3MB.
+
+### OTA (Over The Air)
+
+To use OTA, you need to edit the **secret.h.edit** to be **secret.h** and in the file change the SSID and PASS variables to be your local wifi name and password.
