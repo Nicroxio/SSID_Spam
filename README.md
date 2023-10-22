@@ -32,3 +32,5 @@ Make each new line of HTML its own quote from there just put HTML. Keep the webp
 ### OTA (Over The Air)
 
 To use OTA, you need to edit the **secret.h.edit** to be **secret.h** and in the file change the SSID and PASS variables to be your local wifi name and password.
+
+On platformIO edit the **platformio.ini** file and add ` upload_protocol = espota upload_port = IPADDR` if you want the IP address of the device you can get it from **"captive portal IP"/IP** which should display the IPaddr of the device on the wireless network its connected to.

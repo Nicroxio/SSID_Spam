@@ -22,6 +22,17 @@ const char *ssid_array[16] = {ssid0, ssid1, ssid2, ssid3, ssid4, ssid5, ssid6, s
 unsigned long bootTime = 0, lastActivity = 0, lastTick = 0, array_pos = 0, previous_arraypos = 1;
 unsigned long time_now = 0;
 
+void handleRoot()
+{
+  webServer.send_P(HTTP_CODE, "text/html", page_content);
+}
+
+void getIP()
+{
+  IPAddress ip = WiFi.localIP();
+  webServer.send(200, "text/plain", ip.toString().c_str());
+}
+
 void setup()
 {
   Serial.begin(9600);
@@ -59,7 +70,8 @@ void setup()
                        {
     lastActivity = millis();
     webServer.send_P(HTTP_CODE, "text/html", page_content); });
-
+  webServer.on("/", handleRoot);
+  webServer.on("/IP", getIP);
   webServer.begin();
   IPAddress ip = WiFi.localIP();
   Serial.println(ip);
